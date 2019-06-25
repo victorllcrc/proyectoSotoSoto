@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from django.core.files.storage import FileSystemStorage
 import pandas as pd
 from docx import Document
+from renderword.settings import BASE_DIR
 #import docx
 import json
 # Create your views here.
@@ -18,7 +19,7 @@ def cargaexcel(request):
         fs = FileSystemStorage()
         name = fs.save(uploaded_file.name, uploaded_file)
 
-        xls = pd.ExcelFile('C:/Users/VICTOR/Desktop/angelenv/renderword' + fs.url(name))
+        xls = pd.ExcelFile(BASE_DIR + fs.url(name))
         hojas = xls.sheet_names
         print(len(hojas))
         dc1 = Document()
