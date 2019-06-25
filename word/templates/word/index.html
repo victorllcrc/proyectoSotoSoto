@@ -1,0 +1,17 @@
+{% extends 'word/base.html' %}
+
+{% block content %}
+        <h1>hola mundo</h1>
+        <h2>Upload</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="document">
+            <br>
+            <br>
+            <button type="submit">ENVIAR ARCHIBO</button>
+        </form>
+        {% if url %}
+        <p>Descarga aqui: <a href="{{ url }}">{{ url }}</a></p>
+        {% endif %}
+
+{% endblock %}
