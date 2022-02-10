@@ -1,4 +1,4 @@
-Django==2.2.2
+Django==2.2.27
 docx==0.2.4
 lxml==4.3.4
 numpy==1.16.4
